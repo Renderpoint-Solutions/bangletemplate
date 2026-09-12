@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-cormorant: "Cormorant Garamond", serif;
+    --font-dm-sans: "DM Sans", sans-serif;
+    --font-italianno: "Italianno", cursive;
+  }
+
+  * {
+    @apply border-line-light;
+  }
+
+  body {
+    @apply bg-cream text-brown font-body overflow-x-hidden;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 border border-brown bg-brown text-cream-light uppercase tracking-widest text-xs font-semibold transition-all hover:-translate-y-0.5 hover:shadow-subtle focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brown;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 border border-brown bg-transparent text-brown uppercase tracking-widest text-xs font-semibold transition-all hover:-translate-y-0.5 hover:shadow-subtle hover:bg-cream-light focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brown;
+  }
+  
+  .glass-card {
+      @apply bg-cream-light/95 backdrop-blur-md border border-line-light shadow-card;
+  }
+}

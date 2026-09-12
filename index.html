@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valayal Aura | Glass Bangles</title>
+    <meta name="description" content="Valayal Aura — Glass Bangles. Add colour to your style. Shine every day.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&family=Italianno&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --cream: #f8f0e3;
+            --cream-light: #fffaf2;
+            --brown: #4b3025;
+            --brown-dark: #2e1d17;
+            --brown-soft: #745548;
+            --tan: #d8bca0;
+            --line: #b89470;
+            --gold: #a77a4d;
+            --white: #fffdf9;
+            --shadow: 0 18px 50px rgba(65, 42, 31, .12);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            background: var(--cream);
+            color: var(--brown);
+            font-family: "DM Sans", sans-serif;
+            overflow-x: hidden;
+        }
+
+        img {
+            display: block;
+            max-width: 100%
+        }
+
+        a {
+            color: inherit
+        }
+
+        .page-frame {
+            min-height: 100vh;
+            border: 1px solid rgba(167, 122, 77, .5);
+            margin: 10px;
+            position: relative;
+        }
+
+        .page-frame:before,
+        .page-frame:after {
+            content: "";
+            position: absolute;
+            width: 42px;
+            height: 42px;
+            border: 1px solid var(--line);
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        .page-frame:before {
+            top: 10px;
+            left: 10px;
+            border-right: 0;
+            border-bottom: 0
+        }
+
+        .page-frame:after {
+            bottom: 10px;
+            right: 10px;
+            border-left: 0;
+            border-top: 0
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            background: rgba(248, 240, 227, .94);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(167, 122, 77, .18);
+        }
+
+        .nav {
+            max-width: 1180px;
+            margin: auto;
+            padding: 18px 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .brand {
+            text-decoration: none;
+            text-align: center;
+            line-height: 1;
+        }
+
+        .brand-name {
+            font-family: "Cormorant Garamond", serif;
+            text-transform: uppercase;
+            letter-spacing: .22em;
+            font-size: 25px;
+            font-weight: 600;
+        }
+
+        .brand-sub {
+            display: block;
+            margin-top: 6px;
+            font-size: 8px;
+            letter-spacing: .28em;
+            text-transform: uppercase;
+            color: var(--brown-soft);
+        }
+
+        nav {
+            display: flex;
+            gap: 28px;
+        }
+
+        nav a {
+            text-decoration: none;
+            font-size: 10px;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+            color: var(--brown-soft);
+        }
+
+        nav a:hover {
+            color: var(--brown-dark)
+        }
+
+        .hero {
+            max-width: 1180px;
+            margin: auto;
+            min-height: calc(100vh - 90px);
+            padding: 70px 28px 55px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .ornament {
+            color: var(--gold);
+            letter-spacing: .2em;
+            font-size: 20px;
+            margin-bottom: 22px;
+        }
+
+        .eyebrow {
+            font-size: 11px;
+            letter-spacing: .32em;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: var(--brown-soft);
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(4rem, 8vw, 7.2rem);
+            line-height: .78;
+            font-weight: 500;
+            color: var(--brown-dark);
+        }
+
+        h1 em {
+            display: block;
+            font-family: "Italianno", cursive;
+            font-size: 1.05em;
+            font-weight: 400;
+            line-height: .8;
+            color: var(--brown-soft);
+            margin-left: 8px;
+            margin-top: 12px;
+        }
+
+        .tag {
+            display: inline-block;
+            margin: 34px 0 20px;
+            padding: 10px 28px;
+            border: 1px solid var(--brown);
+            background: var(--brown);
+            color: var(--cream-light);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 18px;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+        }
+
+        .hero-copy {
+            max-width: 520px;
+            font-family: "Cormorant Garamond", serif;
+            font-size: 22px;
+            line-height: 1.35;
+            color: var(--brown);
+        }
+
+        .hero-copy strong {
+            font-weight: 600
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 28px;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 13px 22px;
+            border: 1px solid var(--brown);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: .15em;
+            font-size: 10px;
+            font-weight: 600;
+            transition: .25s ease;
+        }
+
+        .button.primary {
+            background: var(--brown);
+            color: var(--cream-light)
+        }
+
+        .button.secondary {
+            background: transparent
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow)
+        }
+
+        .hero-visual {
+            position: relative;
+            min-height: 570px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-visual:before {
+            content: "";
+            position: absolute;
+            width: min(480px, 90%);
+            aspect-ratio: 1;
+            border: 1px solid rgba(167, 122, 77, .42);
+            border-radius: 50%;
+        }
+
+        .hero-image {
+            width: min(480px, 88%);
+            aspect-ratio: 4/5;
+            object-fit: cover;
+            object-position: 75% center;
+            border-radius: 48% 48% 8px 8px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(167, 122, 77, .4);
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-label {
+            position: absolute;
+            right: 2%;
+            bottom: 6%;
+            z-index: 2;
+            background: rgba(255, 250, 242, .94);
+            border: 1px solid rgba(167, 122, 77, .45);
+            padding: 18px 22px;
+            max-width: 230px;
+            box-shadow: var(--shadow);
+        }
+
+        .hero-label span {
+            font-size: 9px;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+        }
+
+        .hero-label p {
+            margin-top: 6px;
+            font-family: "Cormorant Garamond", serif;
+            font-size: 20px;
+        }
+
+        section {
+            padding: 85px 28px
+        }
+
+        .section-inner {
+            max-width: 1180px;
+            margin: auto
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 45px
+        }
+
+        .section-heading .eyebrow {
+            margin-bottom: 10px
+        }
+
+        .section-heading h2 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(2.5rem, 5vw, 4.2rem);
+            font-weight: 500;
+            color: var(--brown-dark);
+        }
+
+        .rule {
+            width: 90px;
+            height: 1px;
+            background: var(--line);
+            margin: 18px auto 0;
+        }
+
+        .features {
+            background: var(--cream-light);
+            border-top: 1px solid rgba(167, 122, 77, .2);
+            border-bottom: 1px solid rgba(167, 122, 77, .2);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .feature {
+            border: 1px solid rgba(167, 122, 77, .4);
+            background: var(--cream);
+            padding: 42px 38px;
+            text-align: center;
+            box-shadow: 0 8px 28px rgba(65, 42, 31, .05);
+        }
+
+        .feature-icon {
+            width: 76px;
+            height: 76px;
+            border: 1px solid var(--line);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: grid;
+            place-items: center;
+            font-family: "Cormorant Garamond", serif;
+            font-size: 29px;
+            color: var(--brown);
+        }
+
+        .feature h3 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 27px;
+            font-weight: 600;
+            color: var(--brown-dark);
+        }
+
+        .feature p {
+            margin: 10px auto 0;
+            max-width: 390px;
+            color: var(--brown-soft);
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .gallery {
+            background: var(--cream);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+        }
+
+        .gallery-card {
+            overflow: hidden;
+            border: 1px solid rgba(167, 122, 77, .35);
+            background: #fffcf8;
+            aspect-ratio: 9/16;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform .7s ease;
+        }
+
+        .gallery-card:hover img {
+            transform: scale(1.06);
+        }
+
+        .aura {
+            background: var(--brown-dark);
+            color: var(--cream-light);
+        }
+
+        .aura-inner {
+            display: grid;
+            grid-template-columns: .9fr 1.1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .aura-badge {
+            width: 230px;
+            height: 230px;
+            border: 1px solid var(--line);
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            text-align: center;
+            margin: auto;
+            padding: 35px;
+        }
+
+        .aura-badge small {
+            display: block;
+            font-size: 10px;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+        }
+
+        .aura-badge strong {
+            display: block;
+            font-family: "Italianno", cursive;
+            font-size: 48px;
+            font-weight: 400;
+        }
+
+        .aura-copy h2 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(2.7rem, 5vw, 4.6rem);
+            font-weight: 500;
+            line-height: .95;
+        }
+
+        .aura-copy p {
+            margin-top: 20px;
+            max-width: 520px;
+            color: #d9c6b7;
+            line-height: 1.8;
+            font-size: 14px;
+        }
+
+        .contact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 28px;
+        }
+
+        .contact a {
+            text-decoration: none;
+            border: 1px solid rgba(216, 188, 160, .6);
+            padding: 12px 18px;
+            font-size: 13px;
+            letter-spacing: .04em;
+        }
+
+        .contact a:hover {
+            background: var(--cream);
+            color: var(--brown-dark)
+        }
+
+        footer {
+            background: var(--cream);
+            padding: 28px;
+            text-align: center;
+            border-top: 1px solid rgba(167, 122, 77, .3);
+        }
+
+        footer p {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 21px;
+            color: var(--brown);
+        }
+
+        footer span {
+            display: block;
+            margin-top: 7px;
+            font-size: 9px;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: var(--brown-soft);
+        }
+
+        @media(max-width:850px) {
+            nav {
+                display: none
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 35px;
+                padding-top: 55px
+            }
+
+            .hero-visual {
+                min-height: 450px
+            }
+
+            .feature-grid,
+            .aura-inner {
+                grid-template-columns: 1fr
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .gallery-card:last-child {
+                display: none
+            }
+        }
+
+        @media(max-width:520px) {
+            .page-frame {
+                margin: 5px
+            }
+
+            .nav {
+                padding: 14px 18px
+            }
+
+            .brand-name {
+                font-size: 20px
+            }
+
+            .brand-sub {
+                font-size: 7px
+            }
+
+            section {
+                padding: 60px 18px
+            }
+
+            .hero {
+                padding: 45px 18px
+            }
+
+            h1 {
+                font-size: 4rem
+            }
+
+            .hero-copy {
+                font-size: 19px
+            }
+
+            .hero-visual {
+                min-height: 380px
+            }
+
+            .hero-label {
+                right: 0;
+                bottom: 2%
+            }
+
+            .feature {
+                padding: 32px 22px
+            }
+
+            .gallery-grid {
+                gap: 7px
+            }
+
+            .aura-badge {
+                width: 190px;
+                height: 190px
+            }
+
+            .aura-badge strong {
+                font-size: 40px
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-frame">
+
+        <header>
+            <div class="nav">
+                <a class="brand" href="#top" aria-label="Valayal Aura home">
+                    <span class="brand-name">Valayal Aura</span>
+                    <span class="brand-sub">Glass Bangles</span>
+                </a>
+                <nav>
+                    <a href="#about">About</a>
+                    <a href="#collection">Collection</a>
+                    <a href="#orders">Orders & Enquiries</a>
+                </nav>
+            </div>
+        </header>
+
+        <main id="top">
+            <section class="hero">
+                <div>
+                    <div class="ornament">❧ ─── ✦ ─── ❧</div>
+                    <div class="eyebrow">Where Tradition Meets Trend</div>
+                    <h1>Valayal<em>Aura</em></h1>
+
+                    <div class="tag">Glass Bangles</div>
+
+                    <p class="hero-copy">
+                        Add colour to your style.<br>
+                        <strong>Shine every day.</strong>
+                    </p>
+
+                    <div class="hero-actions">
+                        <a class="button primary" href="#collection">View Collection</a>
+                        <a class="button secondary" href="#orders">Make an Enquiry</a>
+                    </div>
+                </div>
+
+                <div class="hero-visual" aria-label="Glass bangle collection">
+                    <img class="hero-image"
+                        src="coolpic.png"
+                        alt="Colourful bangle collection">
+                    <div class="hero-label">
+                        <span>Valayal Aura</span>
+                        <p>Colour, tradition & everyday style.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="about" class="features">
+                <div class="section-inner">
+                    <div class="section-heading">
+                        <div class="eyebrow">Beautiful Bangles For Every You</div>
+                        <h2>Find Your Aura</h2>
+                        <div class="rule"></div>
+                    </div>
+
+                    <div class="feature-grid">
+                        <article class="feature">
+                            <div class="feature-icon">◌</div>
+                            <h3>Trendy & Modern Bangles</h3>
+                            <p>Contemporary designs that match your style and elevate your look.</p>
+                        </article>
+
+                        <article class="feature">
+                            <div class="feature-icon">✦</div>
+                            <h3>Colours & Designs For Every Style</h3>
+                            <p>Endless colours and unique designs for every mood and occasion.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section id="collection" class="gallery">
+                <div class="section-inner">
+                    <div class="section-heading">
+                        <div class="eyebrow">Glass Bangle Collection</div>
+                        <h2>Colour Your Style</h2>
+                        <div class="rule"></div>
+                    </div>
+
+                    <div class="gallery-grid">
+                        <div class="gallery-card">
+                            <img src="bang1.png"
+                                alt="Glass bangles - Style 1">
+                        </div>
+                        <div class="gallery-card">
+                            <img src="bang2.png"
+                                alt="Glass bangles - Style 2">
+                        </div>
+                        <div class="gallery-card">
+                            <img src="bang3.png"
+                                alt="Glass bangles - Style 3">
+                        </div>
+                        <div class="gallery-card">
+                            <img src="bang4.png"
+                                alt="Glass bangles - Style 4">
+                        </div>
+                        <div class="gallery-card">
+                            <img src="bang5.png"
+                                alt="Glass bangles - Style 5">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="orders" class="aura">
+                <div class="section-inner aura-inner">
+                    <div class="aura-badge">
+                        <div>
+                            <small>Wear your</small>
+                            <strong>Tradition</strong>
+                            <small>Style your aura.</small>
+                        </div>
+                    </div>
+
+                    <div class="aura-copy">
+                        <div class="eyebrow" style="color:var(--tan)">Orders & Enquiries</div>
+                        <h2>Choose your colours.<br>Style your aura.</h2>
+                        <p>
+                            Browse the collection and contact Valayal Aura for orders and enquiries.
+                        </p>
+                        <div class="contact">
+                            <a href="tel:6369657335">6369657335</a>
+                            <a href="tel:9952097711">9952097711</a>
+                            <a href="https://wa.me/919952097711" target="_blank" rel="noopener">WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Thank you for supporting small business</p>
+            <span>Valayal Aura • Glass Bangles</span>
+        </footer>
+
+    </div>
+</body>
+
+</html>
