@@ -61,6 +61,7 @@ export function HeroSection({ settings }: { settings: SiteSettings }) {
               src={settings.heroImage}
               alt="Valayal Aura Collection"
               fill
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover object-[75%_center]"
               priority
             />

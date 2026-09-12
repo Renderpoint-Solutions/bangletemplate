@@ -26,6 +26,7 @@ export function ProductCard({ product, className, priority = false }: ProductCar
           src={product.images[0]}
           alt={product.name}
           fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           priority={priority}
           className="object-contain p-4 transition-transform duration-700 ease-out group-hover:scale-105"
         />

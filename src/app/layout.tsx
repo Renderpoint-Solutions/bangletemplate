@@ -33,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body className={`${cormorant.variable} ${dmSans.variable} ${italianno.variable} font-body antialiased bg-cream text-brown`}>
         <div className="relative min-h-screen flex flex-col mx-2 my-2 border border-line-dark">
           {/* Decorative Corner Borders */}

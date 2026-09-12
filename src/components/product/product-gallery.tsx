@@ -33,6 +33,7 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
               src={displayImages[activeIndex]}
               alt={`${productName} - View ${activeIndex + 1}`}
               fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               priority
               className="object-contain p-4"
             />
@@ -56,6 +57,7 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
                 src={img}
                 alt={`${productName} thumbnail ${index + 1}`}
                 fill
+                sizes="(max-width: 768px) 25vw, 10vw"
                 className="object-contain p-2"
               />
             </button>

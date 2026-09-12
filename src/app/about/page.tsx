@@ -37,6 +37,7 @@ export default async function AboutPage() {
                 src={settings.heroImage}
                 alt="Valayal Aura aesthetic"
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover object-center"
               />
             </div>
