@@ -6,8 +6,8 @@ export const siteSettings: SiteSettings = {
   heroTitle: "Valayal Aura",
   heroDescription: "Add colour to your style.\nShine every day.",
   heroImage: "/images/coolpic.png",
-  contactPhones: ["6369657335", "9952097711"],
-  whatsappNumber: "919952097711",
+  contactPhones: ["9876543210", "9876543211"],
+  whatsappNumber: "919876543210",
   socialLinks: {
     instagram: "https://instagram.com/valayalaura",
   },
